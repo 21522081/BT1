@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-
+import IO
 st.title('Data visualization')
 
 data_file = st.file_uploader('Choose a csv  file', type=(['.csv']))
@@ -15,5 +15,6 @@ if data_file is not None:
   st.table(df.describe())
 
   st.header('Show data information')
-
-  st.write(df.info())
+  buffer =io.StringIO()
+  df.info(buf=buffer)
+  st.text(buffer.getvalue())
