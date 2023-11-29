@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import io
-import matplotlib.pylot as plt
+import matplotlib.pyplot as plt
 
 st.title('Data visualization')
 
