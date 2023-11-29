@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import.io
+import io
 st.title('Data visualization')
 
 data_file = st.file_uploader('Choose a csv  file', type=(['.csv']))
