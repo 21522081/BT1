@@ -12,4 +12,4 @@ if data_file is not None:
   st.dataframe(df)
 
   st.header('Descriptive statistics')
-  st.table(pd.describe())
+  st.table(df.describe())
