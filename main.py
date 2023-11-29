@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import io
+import matplotlib.pylot as plt
+
 st.title('Data visualization')
 
 data_file = st.file_uploader('Choose a csv  file', type=(['.csv']))
@@ -18,3 +20,10 @@ if data_file is not None:
   buffer =io.StringIO()
   df.info(buf=buffer)
   st.text(buffer.getvalue())
+
+  st.header('Visualization each attribute')
+  for col in list(df.columns):
+    fig, ax = plt.subplots()
+    ax.hist(df[col], bins=20)
+    plt.xlabel(col)
+    
